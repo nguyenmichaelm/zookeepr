@@ -106,7 +106,7 @@ app.post("/api/animals", (req, res) => {
   if (!validateAnimal(req.body)) {
     res.status(400).send("The animal is not properly formatted.");
   } else {
-    const animal = createNewAnimal(req.body.animals);
+    const animal = createNewAnimal(req.body, animals);
     res.json(animal);
   }
 });
